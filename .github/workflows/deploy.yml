@@ -5,6 +5,7 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/**'
+      - 'README.md'
 
 jobs:
   deploy:
