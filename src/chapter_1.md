@@ -4,10 +4,7 @@
 
 ---
 
-<details>
-<summary>**Notes**</summary>
-
+> **Notes**
 > Let's add some notes here
 >
 
-</details>
