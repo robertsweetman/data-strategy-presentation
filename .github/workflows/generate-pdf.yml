@@ -21,6 +21,25 @@ jobs:
       - name: Install wkhtmltopdf
         run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf
 
+      - name: Setup for PDF generation
+        run: |
+          # Create a list of all HTML files in the correct order
+          cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
+          # Create a temp file to combine all pages
+          echo "<html><head><link rel='stylesheet' href='book.css'></head><body>" > combined.html
+          # Loop through each page and append its content
+          while read page; do
+            # Extract the main content from each page and append it
+            page_path="book/${page}"
+            echo "<div class='chapter'>" >> combined.html
+            # Extract the content between <main> tags
+            awk -v RS='<main[^>]*>' 'NR>1{sub(/<\/main>.*/,"");print}' "$page_path" >> combined.html
+            echo "</div>" >> combined.html
+          done < pages.txt
+          echo "</body></html>" >> combined.html
+          # Copy stylesheets to ensure formatting is preserved
+          cp book/*.css .
+
       - name: Generate PDF
         run: |
           wkhtmltopdf \
@@ -36,7 +55,10 @@ jobs:
             --margin-bottom 20 \
             --margin-left 20 \
             --margin-right 20 \
-            book/index.html \
+            --user-style-sheet book/css/general.css \
+            --user-style-sheet book/css/chrome.css \
+            --user-style-sheet book/css/variables.css \
+            combined.html \
             presentation.pdf
 
       - name: Upload PDF as artifact
