@@ -1,0 +1,54 @@
+name: Generate PDF
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdBook
+        run: |
+            mkdir bin
+            curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.30/mdbook-v0.4.30-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+            echo "$(pwd)/bin" >> $GITHUB_PATH
+
+      - name: Build book
+        run: mdbook build
+
+      - name: Install wkhtmltopdf
+        run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf
+
+      - name: Generate PDF
+        run: |
+          wkhtmltopdf \
+            --enable-local-file-access \
+            --javascript-delay 1000 \
+            --no-stop-slow-scripts \
+            --outline \
+            --outline-depth 3 \
+            --footer-right '[page]/[topage]' \
+            --footer-font-size 8 \
+            --footer-line \
+            --margin-top 20 \
+            --margin-bottom 20 \
+            --margin-left 20 \
+            --margin-right 20 \
+            book/index.html \
+            presentation.pdf
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: presentation-pdf
+          path: presentation.pdf
+
+      - name: Commit and push PDF to repository
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add presentation.pdf
+          git commit -m "Update presentation PDF" || echo "No changes to commit"
+          git push
