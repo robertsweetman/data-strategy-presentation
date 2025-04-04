@@ -1,0 +1,6 @@
+[book]
+authors = ["robertsweetman"]
+language = "en"
+multilingual = false
+src = "src"
+title = "data-governance-and-strategy"
