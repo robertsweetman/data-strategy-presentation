@@ -40,7 +40,7 @@ jobs:
             presentation.pdf
 
       - name: Upload PDF as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: presentation-pdf
           path: presentation.pdf
