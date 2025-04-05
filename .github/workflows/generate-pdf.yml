@@ -158,12 +158,12 @@ jobs:
           done < pages.txt
           echo "</div></div></body></html>" >> combined.html
           
-          # Copy stylesheets and JS files to ensure formatting is preserved
+          # Copy stylesheets to ensure formatting is preserved
           cp book/*.css .
-          cp book/*.js .
           cp -r book/css .
-          # Make sure to copy the mermaid JS files if they're in a different location
-          [ -d "book/js" ] && cp -r book/js .
+          # Copy mermaid JS files from project root
+          cp mermaid.min.js .
+          cp mermaid-init.js .
 
       - name: Generate PDF
         run: |
