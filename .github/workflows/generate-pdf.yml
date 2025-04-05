@@ -26,7 +26,34 @@ jobs:
           # Create a list of all HTML files in the correct order
           cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
           # Create a temp file to combine all pages
-          echo "<html><head><link rel='stylesheet' href='book.css'></head><body class='navy no-js'>" > combined.html
+          echo '<html><head>
+            <link rel="stylesheet" href="book.css">
+            <script src="mermaid.min.js"></script>
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                if (typeof mermaid !== "undefined") {
+                  mermaid.initialize({
+                    startOnLoad: true,
+                    theme: "dark",
+                    themeVariables: {
+                      primaryColor: "#2b79a2",
+                      primaryTextColor: "#c8c9db",
+                      primaryBorderColor: "#3b3f51",
+                      lineColor: "#c8c9db",
+                      secondaryColor: "#272935",
+                      tertiaryColor: "#161923"
+                    }
+                  });
+                  
+                  // Force re-initialization after a small delay to ensure diagrams render
+                  setTimeout(function() {
+                    mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+                  }, 1000);
+                }
+              });
+            </script>
+          </head><body class="navy no-js">' > combined.html
+          
           # Add Navy theme CSS overrides
           echo "<style>
             @page {
@@ -106,7 +133,19 @@ jobs:
               color: #c8c9db;
               padding: 1em;
             }
+            /* Mermaid styling */
+            .mermaid {
+              background-color: #161923 !important;
+            }
+            .mermaid .label {
+              color: #c8c9db !important;
+            }
+            .mermaid .node rect, .mermaid .node circle, .mermaid .node ellipse, .mermaid .node polygon, .mermaid .node path {
+              fill: #272935 !important;
+              stroke: #3b3f51 !important;
+            }
           </style>" >> combined.html
+          
           # Loop through each page and append its content with wrapper for border
           echo "<div class='pdf-wrapper'><div class='pdf-content'>" >> combined.html
           while read page; do
@@ -118,16 +157,19 @@ jobs:
             echo "</div>" >> combined.html
           done < pages.txt
           echo "</div></div></body></html>" >> combined.html
-          # Copy stylesheets to ensure formatting is preserved
+          
+          # Copy stylesheets and JS files to ensure formatting is preserved
           cp book/*.css .
-          # Also copy the theme CSS files specifically
+          cp book/*.js .
           cp -r book/css .
+          # Make sure to copy the mermaid JS files if they're in a different location
+          [ -d "book/js" ] && cp -r book/js .
 
       - name: Generate PDF
         run: |
           wkhtmltopdf \
             --enable-local-file-access \
-            --javascript-delay 1000 \
+            --javascript-delay 5000 \
             --no-stop-slow-scripts \
             --outline \
             --outline-depth 3 \
