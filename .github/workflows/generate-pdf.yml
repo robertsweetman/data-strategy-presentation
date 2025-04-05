@@ -18,8 +18,26 @@ jobs:
       - name: Build book
         run: mdbook build
 
-      - name: Install wkhtmltopdf
-        run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf
+      - name: Install patched wkhtmltopdf
+        run: |
+          # Remove the standard apt version if installed
+          sudo apt-get remove -y wkhtmltopdf || true
+          
+          # Install dependencies
+          sudo apt-get update
+          sudo apt-get install -y xfonts-75dpi xfonts-base fontconfig libxrender1 libjpeg-turbo8
+          
+          # Download the patched version directly from wkhtmltopdf.org
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+          
+          # Install the package
+          sudo dpkg -i wkhtmltox_0.12.6-1.focal_amd64.deb
+          
+          # Create symbolic links to ensure the patched version is used
+          sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin/wkhtmltopdf
+          
+          # Verify the installation
+          wkhtmltopdf --version
 
       - name: Setup for PDF generation
         run: |
@@ -165,9 +183,13 @@ jobs:
 
       - name: Generate PDF
         run: |
+          # Verify we're using the patched version
+          wkhtmltopdf --version
+          
+          # Generate PDF with all features
           wkhtmltopdf \
             --enable-local-file-access \
-            --javascript-delay 5000 \
+            --javascript-delay 1000 \
             --no-stop-slow-scripts \
             --outline \
             --outline-depth 3 \
@@ -178,14 +200,21 @@ jobs:
             --margin-bottom 10 \
             --margin-left 10 \
             --margin-right 10 \
-            --user-style-sheet css/general.css \
-            --user-style-sheet css/variables.css \
             --user-style-sheet css/navy.css \
-            --user-style-sheet css/navy-highlight.css \
             --print-media-type \
             --background \
             combined.html \
             presentation.pdf
+          
+          # Check if generation was successful
+          if [ -f "presentation.pdf" ] && [ -s "presentation.pdf" ]; then
+            echo "PDF generated successfully with patched wkhtmltopdf!"
+            ls -la presentation.pdf
+          else
+            echo "PDF generation failed, trying with minimal options..."
+            # Try with minimal options
+            wkhtmltopdf --enable-local-file-access combined.html presentation.pdf
+          fi
 
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
