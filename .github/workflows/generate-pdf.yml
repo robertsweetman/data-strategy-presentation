@@ -161,9 +161,7 @@ jobs:
           # Copy stylesheets to ensure formatting is preserved
           cp book/*.css .
           cp -r book/css .
-          # Copy mermaid JS files from project root
-          cp mermaid.min.js .
-          cp mermaid-init.js .
+          # Don't need to copy mermaid files since they're already in the current directory
 
       - name: Generate PDF
         run: |
