@@ -20,23 +20,28 @@ jobs:
 
       - name: Install patched wkhtmltopdf
         run: |
-          # Remove the standard apt version if installed
+          # Check Ubuntu version
+          lsb_release -a
+          
+          # Remove standard wkhtmltopdf if installed
           sudo apt-get remove -y wkhtmltopdf || true
           
           # Install dependencies
           sudo apt-get update
-          sudo apt-get install -y xfonts-75dpi xfonts-base fontconfig libxrender1 libjpeg-turbo8
+          sudo apt-get install -y xfonts-75dpi xfonts-base fontconfig libxrender1
           
-          # Download the patched version directly from wkhtmltopdf.org
+          # For Ubuntu 22.04 we need to manually install libssl1.1
+          wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+          sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+          
+          # Install wkhtmltopdf with patched Qt
           wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
-          
-          # Install the package
           sudo dpkg -i wkhtmltox_0.12.6-1.focal_amd64.deb
           
           # Create symbolic links to ensure the patched version is used
-          sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin/wkhtmltopdf
+          sudo ln -sf /usr/local/bin/wkhtmltopdf /usr/bin/wkhtmltopdf
           
-          # Verify the installation
+          # Verify installation
           wkhtmltopdf --version
 
       - name: Setup for PDF generation
