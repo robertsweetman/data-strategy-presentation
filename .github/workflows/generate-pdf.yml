@@ -92,8 +92,23 @@ jobs:
               padding: 1em !important;
               border: none !important;
             }
+            /* Add matching 10pt border wrapper */
+            .pdf-wrapper {
+              background-color: #161923;
+              padding: 10pt;
+              box-sizing: border-box;
+              width: 100%;
+              min-height: 100vh;
+            }
+            /* Ensure content container has matching background */
+            .pdf-content {
+              background-color: #161923;
+              color: #c8c9db;
+              padding: 1em;
+            }
           </style>" >> combined.html
-          # Loop through each page and append its content
+          # Loop through each page and append its content with wrapper for border
+          echo "<div class='pdf-wrapper'><div class='pdf-content'>" >> combined.html
           while read page; do
             # Extract the main content from each page and append it
             page_path="book/${page}"
@@ -102,7 +117,7 @@ jobs:
             awk -v RS='<main[^>]*>' 'NR>1{sub(/<\/main>.*/,"");print}' "$page_path" >> combined.html
             echo "</div>" >> combined.html
           done < pages.txt
-          echo "</body></html>" >> combined.html
+          echo "</div></div></body></html>" >> combined.html
           # Copy stylesheets to ensure formatting is preserved
           cp book/*.css .
           # Also copy the theme CSS files specifically
@@ -119,10 +134,10 @@ jobs:
             --footer-right '[page]/[topage]' \
             --footer-font-size 8 \
             --footer-line \
-            --margin-top 0 \
-            --margin-bottom 0 \
-            --margin-left 0 \
-            --margin-right 0 \
+            --margin-top 10 \
+            --margin-bottom 10 \
+            --margin-left 10 \
+            --margin-right 10 \
             --user-style-sheet css/general.css \
             --user-style-sheet css/variables.css \
             --user-style-sheet css/navy.css \
