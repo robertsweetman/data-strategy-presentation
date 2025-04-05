@@ -26,7 +26,48 @@ jobs:
           # Create a list of all HTML files in the correct order
           cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
           # Create a temp file to combine all pages
-          echo "<html><head><link rel='stylesheet' href='book.css'></head><body>" > combined.html
+          echo "<html><head><link rel='stylesheet' href='book.css'></head><body class='light no-js'>" > combined.html
+          # Replace with dark theme class
+          echo "<style>
+            html { 
+              background-color: #1e1e1e !important;
+            }
+            html.light, body.light {
+              background-color: #1e1e1e !important;
+              color: #ffffff !important;
+            }
+            body {
+              background-color: #1e1e1e !important;
+              color: #ffffff !important;
+            }
+            .chapter {
+              background-color: #1e1e1e !important;
+              color: #ffffff !important;
+            }
+            pre, code {
+              background-color: #2a2a2a !important;
+              border-color: #444444 !important;
+            }
+            a, a:hover {
+              color: #4da6ff !important;
+            }
+            /* Additional overrides for dark theme elements */
+            .header, .sidebar, .content, .footer {
+              background-color: #1e1e1e !important;
+              color: #ffffff !important;
+            }
+            table, th, td {
+              border-color: #444444 !important;
+            }
+            th, h1, h2, h3, h4, h5, h6 {
+              color: #ffffff !important;
+            }
+            blockquote {
+              border-color: #444444 !important;
+              background-color: #2a2a2a !important;
+              color: #dddddd !important;
+            }
+          </style>" >> combined.html
           # Loop through each page and append its content
           while read page; do
             # Extract the main content from each page and append it
@@ -39,6 +80,8 @@ jobs:
           echo "</body></html>" >> combined.html
           # Copy stylesheets to ensure formatting is preserved
           cp book/*.css .
+          # Also copy the theme CSS files specifically
+          cp -r book/css .
 
       - name: Generate PDF
         run: |
@@ -55,9 +98,14 @@ jobs:
             --margin-bottom 20 \
             --margin-left 20 \
             --margin-right 20 \
-            --user-style-sheet book/css/general.css \
-            --user-style-sheet book/css/chrome.css \
-            --user-style-sheet book/css/variables.css \
+            --user-style-sheet css/general.css \
+            --user-style-sheet css/variables.css \
+            --user-style-sheet css/chrome.css \
+            --user-style-sheet css/ayu-highlight.css \
+            --user-style-sheet css/ayu.css \
+            --print-media-type \
+            --no-background \
+            --background \
             combined.html \
             presentation.pdf
 
