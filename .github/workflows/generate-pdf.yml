@@ -26,46 +26,71 @@ jobs:
           # Create a list of all HTML files in the correct order
           cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
           # Create a temp file to combine all pages
-          echo "<html><head><link rel='stylesheet' href='book.css'></head><body class='light no-js'>" > combined.html
-          # Replace with dark theme class
+          echo "<html><head><link rel='stylesheet' href='book.css'></head><body class='navy no-js'>" > combined.html
+          # Add Navy theme CSS overrides
           echo "<style>
-            html { 
-              background-color: #1e1e1e !important;
+            @page {
+              margin: 0;
+              size: A4;
             }
-            html.light, body.light {
-              background-color: #1e1e1e !important;
-              color: #ffffff !important;
+            html { 
+              background-color: #161923 !important;
+            }
+            html.navy, body.navy {
+              background-color: #161923 !important;
+              color: #c8c9db !important;
             }
             body {
-              background-color: #1e1e1e !important;
-              color: #ffffff !important;
+              background-color: #161923 !important;
+              color: #c8c9db !important;
+              margin: 0;
+              padding: 0;
             }
             .chapter {
-              background-color: #1e1e1e !important;
-              color: #ffffff !important;
+              background-color: #161923 !important;
+              color: #c8c9db !important;
+              padding: 1em;
             }
             pre, code {
-              background-color: #2a2a2a !important;
-              border-color: #444444 !important;
+              background-color: #272935 !important;
+              border-color: #3b3f51 !important;
             }
             a, a:hover {
-              color: #4da6ff !important;
+              color: #2b79a2 !important;
             }
-            /* Additional overrides for dark theme elements */
+            /* Additional overrides for navy theme elements */
             .header, .sidebar, .content, .footer {
-              background-color: #1e1e1e !important;
-              color: #ffffff !important;
+              background-color: #161923 !important;
+              color: #c8c9db !important;
             }
             table, th, td {
-              border-color: #444444 !important;
+              border-color: #3b3f51 !important;
             }
             th, h1, h2, h3, h4, h5, h6 {
               color: #ffffff !important;
             }
             blockquote {
-              border-color: #444444 !important;
-              background-color: #2a2a2a !important;
-              color: #dddddd !important;
+              border-color: #3b3f51 !important;
+              background-color: #272935 !important;
+              color: #c8c9db !important;
+            }
+            /* Override any white backgrounds */
+            * {
+              border-color: #3b3f51 !important;
+            }
+            /* Fix for potential white border issue */
+            #content {
+              margin: 0 !important;
+              max-width: 100% !important;
+              padding: 0 !important;
+              background-color: #161923 !important;
+            }
+            .page {
+              background-color: #161923 !important;
+              box-shadow: none !important;
+              margin: 0 !important;
+              padding: 1em !important;
+              border: none !important;
             }
           </style>" >> combined.html
           # Loop through each page and append its content
@@ -94,17 +119,15 @@ jobs:
             --footer-right '[page]/[topage]' \
             --footer-font-size 8 \
             --footer-line \
-            --margin-top 20 \
-            --margin-bottom 20 \
-            --margin-left 20 \
-            --margin-right 20 \
+            --margin-top 0 \
+            --margin-bottom 0 \
+            --margin-left 0 \
+            --margin-right 0 \
             --user-style-sheet css/general.css \
             --user-style-sheet css/variables.css \
-            --user-style-sheet css/chrome.css \
-            --user-style-sheet css/ayu-highlight.css \
-            --user-style-sheet css/ayu.css \
+            --user-style-sheet css/navy.css \
+            --user-style-sheet css/navy-highlight.css \
             --print-media-type \
-            --no-background \
             --background \
             combined.html \
             presentation.pdf
