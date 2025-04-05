@@ -19,6 +19,10 @@ flowchart LR;
     DB --> EC & ARAC & NC;
     EC --> PC & IC & DTC;
     DB -.-> HMPPS & HMCTS & LAA & OPG & CICA;
+
+    style EC fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
+    style HMPPS fill:#e67e22,stroke:#d35400,color:white,stroke-width:2px
+    style DTC fill:#9b59b6,stroke:#8e44ad,color:white,stroke-width:2px
 ```
 
 ---
