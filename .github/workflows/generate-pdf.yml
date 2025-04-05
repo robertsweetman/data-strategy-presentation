@@ -46,16 +46,18 @@ jobs:
 
       - name: Setup for PDF generation
         run: |
-          # First, copy the CSS files so they're available when creating the HTML
-          cp book/*.css .
-          cp -r book/css .
-          
           # Create a list of all HTML files in the correct order
           cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
           
+          # Extract the content of book.css to include inline
+          BOOK_CSS=$(cat book/book.css 2>/dev/null || echo "/* No book.css found */")
+          
           # Create a temp file to combine all pages
           echo '<html><head>
-            <link rel="stylesheet" href="book.css">
+            <style>
+              /* Inlined book.css */
+              '"$BOOK_CSS"'
+            </style>
             <script src="mermaid.min.js"></script>
             <script>
               document.addEventListener("DOMContentLoaded", function() {
@@ -186,10 +188,8 @@ jobs:
           done < pages.txt
           echo "</div></div></body></html>" >> combined.html
           
-          # Copy stylesheets to ensure formatting is preserved
-          # cp book/*.css .
-          # cp -r book/css .
-          # Don't need to copy mermaid files since they're already in the current directory
+          # Only copy CSS for the --user-style-sheet option, not for HTML inclusion
+          cp -r book/css .
 
       - name: Generate PDF
         run: |
