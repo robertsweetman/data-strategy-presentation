@@ -44,159 +44,182 @@ jobs:
           # Verify installation
           wkhtmltopdf --version
 
-      - name: Setup for PDF generation
-        run: |
-          # Create a list of all HTML files in the correct order
-          cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
-          
-          # Extract the content of book.css to include inline
-          BOOK_CSS=$(cat book/book.css 2>/dev/null || echo "/* No book.css found */")
-          
-          # Create a temp file to combine all pages
-          echo '<html><head>
-            <style>
-              /* Inlined book.css */
-              '"$BOOK_CSS"'
-            </style>
-            <script src="mermaid.min.js"></script>
-            <script>
-              document.addEventListener("DOMContentLoaded", function() {
-                if (typeof mermaid !== "undefined") {
-                  mermaid.initialize({
-                    startOnLoad: true,
-                    theme: "dark",
-                    themeVariables: {
-                      primaryColor: "#2b79a2",
-                      primaryTextColor: "#c8c9db",
-                      primaryBorderColor: "#3b3f51",
-                      lineColor: "#c8c9db",
-                      secondaryColor: "#272935",
-                      tertiaryColor: "#161923"
-                    }
-                  });
-                  
-                  // Force re-initialization after a small delay to ensure diagrams render
-                  setTimeout(function() {
-                    mermaid.init(undefined, document.querySelectorAll(".mermaid"));
-                  }, 1000);
-                }
-              });
-            </script>
-          </head><body class="navy no-js">' > combined.html
-          
-          # Add Navy theme CSS overrides
-          echo "<style>
-            @page {
-              margin: 0;
-              size: A4;
-            }
-            html { 
+          - name: Setup for PDF generation
+          run: |
+            # Create a list of all HTML files in the correct order
+            cat src/SUMMARY.md | grep -o "\(\.\/.*\.md\)" | sed 's/\.md$/\.html/' > pages.txt
+            
+            # Extract the content of book.css to include inline
+            BOOK_CSS=$(cat book/book.css 2>/dev/null || echo "/* No book.css found */")
+            
+            # Create a temp file to combine all pages
+            echo '<html><head>
+              <style>
+                /* Inlined book.css */
+                '"$BOOK_CSS"'
+              </style>
+              <script src="mermaid.min.js"></script>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  if (typeof mermaid !== "undefined") {
+                    mermaid.initialize({
+                      startOnLoad: true,
+                      theme: "dark",
+                      themeVariables: {
+                        primaryColor: "#2b79a2",
+                        primaryTextColor: "#c8c9db",
+                        primaryBorderColor: "#3b3f51",
+                        lineColor: "#c8c9db",
+                        secondaryColor: "#272935",
+                        tertiaryColor: "#161923"
+                      }
+                    });
+                    
+                    // Force re-initialization after a small delay to ensure diagrams render
+                    setTimeout(function() {
+                      mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+                    }, 1000);
+                  }
+                });
+              </script>
+            </head><body class="navy no-js" style="background-color: #161923 !important; margin: 0; padding: 0;">' > combined.html
+            
+            # Add Navy theme CSS overrides
+            echo "<style>
+              @page {
+                margin: 0 !important;
+                padding: 0 !important;
+                size: A4;
+                background-color: #161923 !important;
+              }
+              html { 
+                background-color: #161923 !important;
+              }
+              html.navy, body.navy {
+                background-color: #161923 !important;
+                color: #c8c9db !important;
+              }
+              body {
+                background-color: #161923 !important;
+                color: #c8c9db !important;
+                margin: 0 !important;
+                padding: 0 !important;
+              }
+              .chapter {
+                background-color: #161923 !important;
+                color: #c8c9db !important;
+                padding: 1em;
+                margin: 0 !important;
+              }
+              pre, code {
+                background-color: #272935 !important;
+                border-color: #3b3f51 !important;
+              }
+              a, a:hover {
+                color: #2b79a2 !important;
+              }
+              /* Additional overrides for navy theme elements */
+              .header, .sidebar, .content, .footer {
+                background-color: #161923 !important;
+                color: #c8c9db !important;
+              }
+              table, th, td {
+                border-color: #3b3f51 !important;
+              }
+              th, h1, h2, h3, h4, h5, h6 {
+                color: #ffffff !important;
+              }
+              blockquote {
+                border-color: #3b3f51 !important;
+                background-color: #272935 !important;
+                color: #c8c9db !important;
+              }
+              /* Override any white backgrounds */
+              * {
+                border-color: #3b3f51 !important;
+              }
+              /* Fix for potential white border issue */
+              #content {
+                margin: 0 !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+                background-color: #161923 !important;
+              }
+              .page {
+                background-color: #161923 !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 1em !important;
+                border: none !important;
+              }
+              /* Content wrapper with custom padding */
+              .pdf-wrapper {
+                background-color: #161923 !important;
+                margin: 0 !important;
+                box-sizing: border-box !important;
+                width: 100% !important;
+                min-height: 100vh !important;
+                padding: 5pt !important; /* Half the previous 10pt padding */
+                border: none !important;
+              }
+              /* Ensure content container has matching background */
+              .pdf-content {
+                background-color: #161923 !important;
+                color: #c8c9db !important;
+                padding: 0.5em !important;
+                margin: 0 !important;
+                border: none !important;
+              }
+              /* Mermaid styling */
+              .mermaid {
+                background-color: #161923 !important;
+              }
+              .mermaid .label {
+                color: #c8c9db !important;
+              }
+              .mermaid .node rect, .mermaid .node circle, .mermaid .node ellipse, .mermaid .node polygon, .mermaid .node path {
+                fill: #272935 !important;
+                stroke: #3b3f51 !important;
+              }
+            </style>" >> combined.html
+            
+            # Loop through each page and append its content with wrapper for border
+            echo "<div class='pdf-wrapper' style='background-color: #161923 !important; padding: 5pt !important; margin: 0 !important;'><div class='pdf-content' style='background-color: #161923 !important; margin: 0 !important;'>" >> combined.html
+            while read page; do
+              # Extract the main content from each page and append it
+              page_path="book/${page}"
+              echo "<div class='chapter' style='background-color: #161923 !important; margin: 0 !important;'>" >> combined.html
+              # Extract the content between <main> tags
+              awk -v RS='<main[^>]*>' 'NR>1{sub(/<\/main>.*/,"");print}' "$page_path" >> combined.html
+              echo "</div>" >> combined.html
+            done < pages.txt
+            echo "</div></div></body></html>" >> combined.html
+            
+            # Only copy CSS for the --user-style-sheet option, not for HTML inclusion
+            cp -r book/css .
+            
+            # Create custom CSS specifically for wkhtmltopdf
+            cat > custom.css << 'EOL'
+            * {
               background-color: #161923 !important;
-            }
-            html.navy, body.navy {
-              background-color: #161923 !important;
-              color: #c8c9db !important;
             }
             body {
               background-color: #161923 !important;
-              color: #c8c9db !important;
-              margin: 0;
-              padding: 0;
-            }
-            .chapter {
-              background-color: #161923 !important;
-              color: #c8c9db !important;
-              padding: 1em;
-            }
-            pre, code {
-              background-color: #272935 !important;
-              border-color: #3b3f51 !important;
-            }
-            a, a:hover {
-              color: #2b79a2 !important;
-            }
-            /* Additional overrides for navy theme elements */
-            .header, .sidebar, .content, .footer {
-              background-color: #161923 !important;
-              color: #c8c9db !important;
-            }
-            table, th, td {
-              border-color: #3b3f51 !important;
-            }
-            th, h1, h2, h3, h4, h5, h6 {
-              color: #ffffff !important;
-            }
-            blockquote {
-              border-color: #3b3f51 !important;
-              background-color: #272935 !important;
-              color: #c8c9db !important;
-            }
-            /* Override any white backgrounds */
-            * {
-              border-color: #3b3f51 !important;
-            }
-            /* Fix for potential white border issue */
-            #content {
               margin: 0 !important;
-              max-width: 100% !important;
               padding: 0 !important;
+            }
+            @page {
+              margin: 0;
               background-color: #161923 !important;
             }
-            .page {
-              background-color: #161923 !important;
-              box-shadow: none !important;
-              margin: 0 !important;
-              padding: 1em !important;
-              border: none !important;
-            }
-            /* Add matching 10pt border wrapper */
-            .pdf-wrapper {
-              background-color: #161923;
-              padding: 10pt;
-              box-sizing: border-box;
-              width: 100%;
-              min-height: 100vh;
-            }
-            /* Ensure content container has matching background */
-            .pdf-content {
-              background-color: #161923;
-              color: #c8c9db;
-              padding: 1em;
-            }
-            /* Mermaid styling */
-            .mermaid {
-              background-color: #161923 !important;
-            }
-            .mermaid .label {
-              color: #c8c9db !important;
-            }
-            .mermaid .node rect, .mermaid .node circle, .mermaid .node ellipse, .mermaid .node polygon, .mermaid .node path {
-              fill: #272935 !important;
-              stroke: #3b3f51 !important;
-            }
-          </style>" >> combined.html
-          
-          # Loop through each page and append its content with wrapper for border
-          echo "<div class='pdf-wrapper'><div class='pdf-content'>" >> combined.html
-          while read page; do
-            # Extract the main content from each page and append it
-            page_path="book/${page}"
-            echo "<div class='chapter'>" >> combined.html
-            # Extract the content between <main> tags
-            awk -v RS='<main[^>]*>' 'NR>1{sub(/<\/main>.*/,"");print}' "$page_path" >> combined.html
-            echo "</div>" >> combined.html
-          done < pages.txt
-          echo "</div></div></body></html>" >> combined.html
-          
-          # Only copy CSS for the --user-style-sheet option, not for HTML inclusion
-          cp -r book/css .
-
+            EOL
+  
       - name: Generate PDF
         run: |
           # Verify we're using the patched version
           wkhtmltopdf --version
           
-          # Generate PDF with all features
+          # Generate PDF with zero margins
           wkhtmltopdf \
             --enable-local-file-access \
             --javascript-delay 1000 \
@@ -206,21 +229,44 @@ jobs:
             --footer-right '[page]/[topage]' \
             --footer-font-size 8 \
             --footer-line \
-            --margin-top 10 \
-            --margin-bottom 10 \
-            --margin-left 10 \
-            --margin-right 10 \
-            --user-style-sheet css/navy.css \
+            --margin-top 0 \
+            --margin-bottom 0 \
+            --margin-left 0 \
+            --margin-right 0 \
+            --user-style-sheet custom.css \
             --print-media-type \
             --background \
+            --disable-smart-shrinking \
+            combined.html \
+            no_margin.pdf
+            
+          # If we need a small border, create another version with 5pt margins (half of 10pt)
+          wkhtmltopdf \
+            --enable-local-file-access \
+            --javascript-delay 1000 \
+            --no-stop-slow-scripts \
+            --outline \
+            --outline-depth 3 \
+            --footer-right '[page]/[topage]' \
+            --footer-font-size 8 \
+            --footer-line \
+            --margin-top 5 \
+            --margin-bottom 5 \
+            --margin-left 5 \
+            --margin-right 5 \
+            --user-style-sheet custom.css \
+            --print-media-type \
+            --background \
+            --disable-smart-shrinking \
             combined.html \
             presentation.pdf
+            
+          # Check file sizes
+          ls -la *.pdf
+          echo "Generated both zero-margin and 5pt-margin PDFs"
           
           # Check if generation was successful
-          if [ -f "presentation.pdf" ] && [ -s "presentation.pdf" ]; then
-            echo "PDF generated successfully with patched wkhtmltopdf!"
-            ls -la presentation.pdf
-          else
+          if [ ! -s "presentation.pdf" ]; then
             echo "PDF generation failed, trying with minimal options..."
             # Try with minimal options
             wkhtmltopdf --enable-local-file-access combined.html presentation.pdf
@@ -230,4 +276,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: presentation-pdf
-          path: presentation.pdf
+          path: "*.pdf"
