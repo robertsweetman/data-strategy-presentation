@@ -35,6 +35,8 @@ flowchart TD;
 
 ![MoJ Digital Strategy](./images/digi-strategy-2025.jpg)
 
+![MoJ Focus](./images/wordcloud-191603.png)
+
 
 ---
 > **TODO:** Evaluation (using a particular method) and Gap Analysis
