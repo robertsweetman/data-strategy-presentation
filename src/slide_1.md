@@ -37,7 +37,7 @@ flowchart TD;
 
 
 ---
-> **TODO:** Evaluation (using a particular method) and Gap Analysis>
+> **TODO:** Evaluation (using a particular method) and Gap Analysis
 > ### Milestone 1: Evaluate your organisations data stratey and governance
 >
 > Use Principals of leadership to thoroughly evaluate your organisations relationship between data strategy, data governance and value (wk 3)
