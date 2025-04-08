@@ -32,6 +32,7 @@ flowchart TD;
 
   1. Legacy Systems.
   2. User experience, impacting both staff and prisoners.
+  3. Here comes <del>our new robot overlords</del> AI.
 
 ![MoJ Digital Strategy](./images/digi-strategy-2025.jpg)
 
