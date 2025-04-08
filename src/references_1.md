@@ -5,7 +5,7 @@ Ministry of Justice - About. Available at: https://www.gov.uk/government/organis
 
 State of Digital Government Review (2025). Available at: https://www.gov.uk/government/publications/state-of-digital-government-review (Accessed: Apr 2025)
 
-Artificial Intelligence Playbook for the UK Government (2025). Available at: https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html (Accessed: Apr 2025)
+GOV.UK. (2025). Artificial Intelligence Playbook for the UK Government (HTML). [online] Available at: https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government/artificial-intelligence-playbook-for-the-uk-government-html (Accessed: Apr 2025).
 
 ## Data Strategy and Governance
 Ministry of Justice (2022) Ministry of Justice Digital Strategy 2025. Available at: https://www.gov.uk/government/publications/ministry-of-justice-digital-strategy-2025/ministry-of-justice-digital-strategy-2025 (Accessed: Feb 2025).

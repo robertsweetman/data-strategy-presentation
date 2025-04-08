@@ -10,3 +10,10 @@
 > * Utilizing principals of leadership, propose a single change to the current data strategy to drive impace (LO2)
 > * Alignment plan to better meet business goals, including considerations for future technology (LO2)
 > * Justification for the recommended change considering organisational strategy (LO1)
+>
+> #### live session notes 
+>
+> **Recommendations for Change**
+> tech based solutions (oracle vectorised un-structured data), data fabric, knowledge graph and kafka (live knowledge data processing)
+> idea: invest in AI post processing/reporting.
+> There is a requirement in the Learning Outcomes to consider ML/AI and/or emerging technologies. <<-THIS

@@ -49,5 +49,21 @@ flowchart TD;
 > * Overview of the organisations current data strategy and governance
 > * Evaluation of current data governance approaches, model proposals and data quality enhancements
 > * Gap analysis of potential improvements
+>
+> #### live session notes
+> What is organistional strategy? - How to Win - trade offs in order to become the top dog.
+> Business strategy for government != Profit driven 
+> Three pillars -> what are these?
+>
+> Data Strategy - the different ways data is used, how it's used to achieve our organisational goals -> what's the purpose of the data
+> Maturity level, what is the maturity of the organisation in terms of data strategy?
+>
+> Look at the data governance module? - What is Data Governance/role definitions. Data Governance Frameworks
+> - Goals, Methods, People, Processes, Tech, Culture.
+>
+> Organisational strategy -> Data Strategy -> Data Governance -> 
+>                                -? What's not going well particularly -> this is inherantly abstract.
+>                                -? Come up with a nailed down example of what's going wrong
+
 
 
