@@ -17,15 +17,19 @@ block-beta
         REPORTING["REPORTING"]
     end
     block:group2:8
-        %% TODO: Check these acronyms
         HMPPS["HMPPS"]
         HMCTS["HMCTS"]
         LAA["LAA"]
-        OPG["OPG"]
-        CICA["CICA"]
+        CICA["CICA"] 
     end
     style NOMIS fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
     style OASYS fill:#e67e22,stroke:#d35400,color:white,stroke-width:2px
     style REPORTING fill:#9b59b6,stroke:#8e44ad,color:white,stroke-width:2px
-
 ```
+* HMPPS - Her Majesty's Prison and Probation Service
+* HMCTS - Her Majesty's Courts and Tribunals Service
+* LAA - Legal Aid Agency
+* CICA - Criminal Injuries Compensation Authority
+* and more...
+
+**There are a LOT of bodies relying on this data.**

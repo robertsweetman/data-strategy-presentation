@@ -12,6 +12,9 @@ Ministry of Justice (2022) Ministry of Justice Digital Strategy 2025. Available 
 
 Ministry of Justice Governance. Available at: https://www.gov.uk/government/organisations/ministry-of-justice/about/our-governance (Accessed: March 2025)
 
+# UK Govt Data Maturity Assessment
+https://www.gov.uk/government/publications/data-maturity-assessment-for-government-framework/data-maturity-assessment-for-government-framework-html#maturity-levels
+
 ## DEI Ref: change this
 Ministry of Justice (July 2024) Data First Research Bulletin. Available at: https://assets.publishing.service.gov.uk/media/66a8e11dfc8e12ac3edb0735/Data_First_Research_Bulletin_MoJ.pdf (Accessed: April 2025)
 
