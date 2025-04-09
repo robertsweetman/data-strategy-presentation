@@ -10,10 +10,20 @@
 ```mermaid
 block-beta
     columns 8
-    NOMIS["NOMIS"]:4 OASYS["OASYS"]:4
-    APPS["APPS"]:8
-    REPORTING["REPORTING"]:8
-
+    NOMIS["NOMIS DB"]:4 OASYS["OASYS DB"]:4
+    block:group1:8
+        columns 1
+        APPS["APPLICATIONS"] 
+        REPORTING["REPORTING"]
+    end
+    block:group2:8
+        %% TODO: Check these acronyms
+        HMPPS["HMPPS"]
+        HMCTS["HMCTS"]
+        LAA["LAA"]
+        OPG["OPG"]
+        CICA["CICA"]
+    end
     style NOMIS fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
     style OASYS fill:#e67e22,stroke:#d35400,color:white,stroke-width:2px
     style REPORTING fill:#9b59b6,stroke:#8e44ad,color:white,stroke-width:2px
