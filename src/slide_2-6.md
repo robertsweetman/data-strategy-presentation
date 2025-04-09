@@ -12,7 +12,7 @@
 3/4 - Having the right systems -> fails due to legacy systems, there is interest in modernisation however
 4   - Knowing the data you have
 4   - Making decisions with data
-2/3 - Managing and using data ethically -> primarily due to over-whelming lack of transparency
+2/3 - Managing and using data ethically -> primarily due to an over-whelming lack of transparency
 4   - Managing your data
 5   - Protecting your data
 4/5 - Setting your data direction

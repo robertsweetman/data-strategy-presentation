@@ -1,5 +1,7 @@
 # Sustainable Development Analysis
 
+TODO: Look at the rubric and understand more about what this is asking for.
+
 ---
 > 4 minutes
 > * Go a step further with your recommendation by considering sustainable development principals that can drive better decision making and business value through data strategy

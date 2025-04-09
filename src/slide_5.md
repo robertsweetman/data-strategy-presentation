@@ -1,5 +1,11 @@
 # Implementation
 
+Implement and TEST INTERNALLY - also means it should make everyone's job easier anyway.
+
+Implement and (potentially) require users to share all the results :shrug: 
+
+Ongoing monitoring must be a thing.
+
 ---
 > ### Milestone 3: Create an Implementation Plan For Your Proposal
 > For your proposed change, deliver a compelling proposal focussed on the business impact of your data strategy recommendation. 

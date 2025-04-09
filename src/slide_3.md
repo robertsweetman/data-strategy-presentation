@@ -1,5 +1,34 @@
 # Recommendation for Change
 
+From the maturity model the failure in transparency can clearly lead to ethical/discrimination issues going un-noticed.(TODO: add ref)
+
+The data is available for accedemic scrutiny and only under strict supervision. 
+
+This effectively limits it's value to the organisation and the public since true insights may only appear on an ad-hoc basis, if at all.
+
+It's very hard to say that the MoJ is a data driven organisation when the data is not available to be scrutinised by the public.
+
+## The pre-AI solution
+
+Initiate a multi-year project to anonymise the data, eventually making it publicly available.
+
+This would require significant technical changes:
+  - Modernisation and standardisation of the databases, schemas and various tables inside them.
+  - Likely re-write of key legacy applications
+  - Large scale anonymisation effort on an ongoing basis
+  - Significant security improvements to allow for public access
+  - Increased cost, unless the data is made available in a more cost effective way
+
+## The post-AI solution
+
+Just literally on the scene are AI agents that leverage the Model Context Protocol (https://www.anthropic.com/news/model-context-protocol) which 
+
+At a high level combining the MCP with (for example) AWS Bedrock Guardrails (https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html) would allow for a secure, anonymised and queryable data set to be made available to the public.
+
+This would also allow the data to be queried in a natural language format, a key to opening up engagement to non-academic users.
+
+> “The art and science of asking questions is the source of all knowledge.” – Thomas Berger
+
 ---
 > ### Milestone 2: Create One Recommendation for Change, considering sustainable development
 >
