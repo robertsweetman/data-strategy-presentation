@@ -31,8 +31,7 @@ flowchart TD;
 * While it's a challenge to focus across ALL areas, given the scope of the Digital Strategy document, there are two key issues which are inexorably linked...
 
   1. Legacy Systems.
-  2. User experience, impacting both staff and prisoners.
-  3. Here comes <del>our new robot overlords</del> AI.
+  2. User experience, impacting both staff and prisoners. 
 
 ![MoJ Digital Strategy](./images/digi-strategy-2025.jpg)
 
