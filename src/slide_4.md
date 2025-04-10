@@ -18,4 +18,24 @@ TODO: Look at the rubric and understand more about what this is asking for.
 > FOCUS on some prioritizing/what's the most pressing issue in modules 4, 5 & 6 then add them in.
 > Data democratization is 'probably' the thing to focus on. 
 > People based recommendations, second KSB makes a recommendation that's well justified. Change management while doing it.
+>
+> Thursday review. 
+> re-watch the recording about this
+> need a metric for DEI or sustainability, measurable time bound SMART goals for these. 
+> causal decision diagram
 > 
+> Have a change management slide/plan - how to bring people along on the journey.
+> Work with the clients to understand what/why - pick a change management model and use that. -> ADCAR? Add this. What is the MoJ change management process/model. How to use this or risk grid/racy grid for steps of ADKAR
+> Mitigation plan for risks
+> TODO - REFERENCES IMAGES FROM THE INTERNET
+> Stakeholder analysis
+> Gannt chart
+> Risk management
+> 
+> Implementation in unit 8
+> Gannt chart and smart goals
+> When achieving goals, depending on resources.
+>
+> ROI - how do we link ROI/metrics that are relevant to the organisational strategy perspecitive. What do we measure our project implementation success against.
+>
+> TODO: Hide button in PDF export
