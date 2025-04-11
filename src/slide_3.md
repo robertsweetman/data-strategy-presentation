@@ -1,12 +1,12 @@
 # Recommendation for Change
 
-From the maturity model the failure in transparency can clearly lead to ethical/discrimination issues going un-noticed.(TODO: add ref)
+From the maturity model the failure in transparency can clearly lead to ethical/discrimination issues going un-noticed.[()]
 
 The data is available for accedemic scrutiny and only under strict supervision. 
 
 This effectively limits it's value to the organisation and the public since true insights may only appear on an ad-hoc basis, if at all.
 
-It's very hard to say that the MoJ is a data driven organisation when the data is not available to be scrutinised by the public.
+It's hard to claim that the MoJ is a data driven organisation when the data is not available to be scrutinised by the public.
 
 ## The pre-AI solution
 

@@ -100,23 +100,39 @@ gantt
     
     section Assess
     Current State   :a1, 2025-06-01, 3w
-    Gap Analysis    :a2, after a1, 2w
-    
+    Project Brief   :a2, after a1, 4w
+    Executive Sponsorship :crit, a2a, after a1, 6w
+    Stakeholder Engagement :crit, a2b, after a2, 6w
+    Go/No-Go Decision :milestone, a2c, after a2b, 0d
+   
     section Plan
-    Strategy Dev    :a3, after a2, 4w
-    Resources       :a4, after a3, 2w
+    Technical Outline :a3, after a2b, 4w
+    Ramp up Resources :a4, after a3, 2w
     
-    section Build
-    Gov Framework   :a5, after a4, 3w
-    Data Platform   :a6, after a4, 8w
+    section POC
+    Investigation   :a5, after a4, 3w
+    POC Development   :a6, after a4, 8w
+    Internal Testing :a7, after a6, 4w
+```
+
+```mermaid
+gantt
+    title Data Strategy Implementation - Deployment
+    dateFormat YYYY-MM-DD
+    axisFormat %b '%y
+    tickInterval 1month
     
-    section Deploy
-    Pilot           :a7, after a5, 3w
-    Full Rollout    :crit, a8, after a7, 4w
+    section Pilot
+    Staff Training   :a1, 2026-01-01, 6w
+    Internal Pilot   :a2, after a1, 12w
+    Security Testing :a3, after a1, 12w
+    Pilot Assesment Period: a4, after a3, 12w
+    Pilot Review     :milestone, a5, after a3, 0d
     
-    section Review
-    Evaluation      :a9, after a8, 3w
-    Final Report    :milestone, after a9, 0d
+    section Rollout
+    Rollout Go/No-Go Decision :milestone, a6, after a4, 0d
+    Rollout      :a7, after a6, 24w
+    Assessment   :milestone, after a7, 0d
 ```
 
 

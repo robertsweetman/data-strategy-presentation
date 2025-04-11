@@ -1,7 +1,7 @@
 # Summary
 
 - [Introduction](./slide_0.md)
-- [Current Data Strategy and Governance - Overview](./slide_1.md)
+- [Current Data Strategy and Governance](./slide_1.md)
 - [Organisational Evaluation](./slide_2_0.md)
 - [Gap Analysis](./slide_2_5.md)
 - [UK Gov data maturity assessment](./slide_2_6.md)
@@ -9,5 +9,7 @@
 - [Sustainable Development Analysis](./slide_4.md)
 - [Implementation](./slide_5_0.md)
 - [Timescales for Change](./slide_5_5.md)
+- [Risks and Mitigation](./slide_5_6.md)
 - [Impact Analysis](./slide_6.md)
+- [Conclusion](./slide_7.md)
 - [References](./references_1.md)
