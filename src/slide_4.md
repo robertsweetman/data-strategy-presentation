@@ -1,4 +1,4 @@
-# Sustainable Development Analysis
+# Ethics, DEI and Sustainability Analysis
 
 TODO: Look at the rubric and understand more about what this is asking for.
 

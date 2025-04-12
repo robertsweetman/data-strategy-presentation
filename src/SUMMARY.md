@@ -6,7 +6,7 @@
 - [Gap Analysis](./slide_2_5.md)
 - [UK Gov data maturity assessment](./slide_2_6.md)
 - [Recommendation for Change](./slide_3.md)
-- [Sustainable Development Analysis](./slide_4.md)
+- [Ethics, DEI and Sustainability Analysis](./slide_4.md)
 - [Implementation](./slide_5_0.md)
 - [Timescales for Change](./slide_5_5.md)
 - [Risks and Mitigation](./slide_5_6.md)
