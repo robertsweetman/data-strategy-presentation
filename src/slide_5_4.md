@@ -27,6 +27,7 @@ Cultural
   - As part of the training:
     - Show examples where access to better/more open data would have led to better outcomes
     - As quickly as possible get to a place where there is a POC/demo to show staff
+    - Encourage open debate as to risks/issues once the internal pilot is live
 
 Security Risks
   - The primary goal of a POC will be to show the organisation that PII is not available

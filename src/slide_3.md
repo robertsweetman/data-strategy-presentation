@@ -21,7 +21,7 @@ This would require significant technical changes:
 
 ## The post-AI solution
 
-Just literally on the scene are AI agents that leverage the Model Context Protocol (https://www.anthropic.com/news/model-context-protocol) which 
+Just literally on the scene are AI agents that leverage the Model Context Protocol (https://www.anthropic.com/news/model-context-protocol) which can connect to data, allow natural language questions to be the interface rather than a query language and return anonymized results.
 
 At a high level combining the MCP with (for example) AWS Bedrock Guardrails (https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html) would allow for a secure, anonymised and queryable data set to be made available to the public.
 
