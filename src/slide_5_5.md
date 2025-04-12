@@ -102,7 +102,7 @@ gantt
     Current State   :a1, 2025-06-01, 3w
     Project Brief   :a2, after a1, 4w
     Executive Sponsorship :crit, a2a, after a1, 6w
-    Stakeholder Engagement :crit, a2b, after a2, 6w
+    Stakeholder Engagement :crit, a2b, after a2, 8w
     Go/No-Go Decision :milestone, a2c, after a2b, 0d
    
     section Plan
@@ -123,11 +123,11 @@ gantt
     tickInterval 1month
     
     section Pilot
-    Staff Training   :a1, 2026-01-01, 6w
+    Staff Training   :a1, 2026-02-01, 6w
     Internal Pilot   :a2, after a1, 12w
-    Security Testing :a3, after a1, 12w
+    Security Testing :crit, a3, after a1, 12w
     Pilot Assesment Period: a4, after a3, 12w
-    Pilot Review     :milestone, a5, after a3, 0d
+    Pilot Review     :milestone, a5, after a4, 0d
     
     section Rollout
     Rollout Go/No-Go Decision :milestone, a6, after a4, 0d
@@ -135,8 +135,6 @@ gantt
     Assessment   :milestone, after a7, 0d
 ```
 
+Assessments will be ongoing to course correct to meet the goals over the long term.
 
----
-> **Notes**
->
-> 
+
