@@ -18,9 +18,9 @@ flowchart LR
 * Improve Training    - Training is likely needed to effect real change
 * Equitable Justice   - Fair application of justice/law interpretations
 
-**Justice can tend towards being applied fairly across race/cultures**
+**Justice can tend towards being applied fairly across race/cultures/other dimensions**
 * The gap in outcomes between white vs. ethnic minority offenders should tend towards zero
-  * Measured by comparing sentencing, re-offending rates and conviction rates, for example
+  * Dimensions across sentencing, re-offending and conviction rates
   * Achievable by increasing training around fairness and bias in sentencing
   * Driven by transparency in data reporting this is a realistic and desirable goal
 * Where this _doesn't_ start lining up there is obviously also something else at play
