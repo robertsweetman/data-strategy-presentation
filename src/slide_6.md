@@ -28,7 +28,7 @@ flowchart LR
 * Where this _doesn't_ start lining up there is obviously also something else at play
   * Inconsistencies can be properly investigated 
   * Ordinarily, anomalies wouldn't surface from data that can't be transparently scrutinized
-  * **Create Policies created to address these particular outliers**
+  * **Create Policies to address these particular outliers**
 
 * Allows commentators, as well as the MoJ itself, to rely on a publically available data-set
   * Reduces perception of bias as well as media or political exploitation of a lack of transparency

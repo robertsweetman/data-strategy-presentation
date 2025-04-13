@@ -1,7 +1,7 @@
 # Risks and Mitigation
 
-## Challenges
-* Resistance to Cultural Change 
+## Challenges (in priority order)
+1. Resistance to Cultural Change 
   
   * Senior management MUST buy in and communicate a clear vision of the change
     * How improving data transparency and access will benefit all users
@@ -13,7 +13,7 @@
     * Appreciate a greater exposure to what users require from the data
     * Be comfortable with the idea that insights might come from outside the org    
   
-* Significant push-back around security risks
+2. Significant push-back around security risks
 
   * All levels of the organistion will be very concerned with the security implications
     * The technical implementation will be perceived as new and therefore untrusted
@@ -27,7 +27,7 @@ Cultural
   - As part of the training:
     - Show examples where access to better/more open data would have led to better outcomes
     - As quickly as possible get to a place where there is a POC/demo to show staff
-    - Encourage open debate as to risks/issues once the internal pilot is live
+    - Encourage open debate as to risks/issues **once the internal pilot is live**
 
 Security Risks
   - The primary goal of a POC will be to show the organisation that PII is not available

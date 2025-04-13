@@ -20,10 +20,10 @@
 
 ### Data Challenges
 * Production data access requires security clearance
-* Data analysis requires specialist knowledge, tools and training
+* Data analysis requires specialist knowledge, tools and training [(11)](./references_1.md#apply-for-hmpps-research)
 * Data is not anonymised so cannot be made available to the public generally
   * You _can_ fill in a 50 page form to apply for access with no guarantee of success
-  * No outside scrutiny means that outcomes based on data become unchallenged/un-reliable potentially
+  * Little outside scrutiny means that outcomes based on data are potentially unreliable
 
 ## Government's own State of Digital Government Review [(2)](./references_1.md#state-of-digital-government-review)
 

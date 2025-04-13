@@ -23,7 +23,7 @@ flowchart TD;
 [(4)](./references_1.md#our-governance)
 
 ![MoJ Digital Strategy](./images/digi-strategy-2025.jpg)
-[(5)](./references_1.md#digi-strategy-2025)/[(6)](./references_1.md#ministry-of-justice-digital-strategy-2025)
+[(5)](./references_1.md#digi-strategy-2025)[/(6)](./references_1.md#ministry-of-justice-digital-strategy-2025)
 
 ```mermaid
 block-beta
