@@ -1,10 +1,34 @@
 # Implementation
 
-Implement and TEST INTERNALLY - also means it should make everyone's job easier anyway.
+```mermaid
+flowchart TD
 
-Implement and (potentially) require users to share all the results :shrug: 
+   db1[(Db 1)]
+   db2[(Db 2)]
+   db3[(Db 3)]
+   ai["MCP"]
+   guard["Guardrails"] 
+   query["Query Frontend"]
 
-Ongoing monitoring must be a thing.
+   ai --> db1
+   ai --> db2
+   ai --> db3
+   ai --> guard
+   guard --> query
+   query --> ai
+
+   linkStyle 0,1,2,3,4,5 stroke:#ffffff,stroke-width:2px
+   style query fill:#3498db,stroke:#2980b9,color:white,stroke-width:2px
+   style guard fill:#ff0000,stroke:#ff0000,color:white,stroke-width:2px
+   style ai fill:#e67e22,stroke:#d35400,color:white,stroke-width:2px    
+```
+## Stakeholders
+* Executive Board and SLT
+  * Drive change
+* Security Team
+  * Legitimacy and Confidence
+* Data and Reporting Team
+  * Evangelise Internally
 
 ---
 > ### Milestone 3: Create an Implementation Plan For Your Proposal

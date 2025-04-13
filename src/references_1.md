@@ -10,6 +10,10 @@
 |  6  | Ministry of Justice (2022) Ministry of Justice Digital Strategy 2025. Available at: [https://www.gov.uk/government/publications/ministry-of-justice-digital-strategy-2025/ministry-of-justice-digital-strategy-2025](https://www.gov.uk/government/publications/ministry-of-justice-digital-strategy-2025/ministry-of-justice-digital-strategy-2025) (Accessed: Feb 2025). |
 |  7  | Data Maturity Assessment for Government Framework. Available at: [https://www.gov.uk/government/publications/data-maturity-assessment-for-government-framework/data-maturity-assessment-for-government-framework-html#maturity-levels](https://www.gov.uk/government/publications/data-maturity-assessment-for-government-framework/data-maturity-assessment-for-government-framework-html#maturity-levels) |
 |  8  | Ministry of Justice (July 2024) Data First Research Bulletin. Available at: [https://assets.publishing.service.gov.uk/media/66a8e11dfc8e12ac3edb0735/Data_First_Research_Bulletin_MoJ.pdf](https://assets.publishing.service.gov.uk/media/66a8e11dfc8e12ac3edb0735/Data_First_Research_Bulletin_MoJ.pdf) (Accessed: April 2025) |
+|  9  | Anthropic.com. (2025). Introducing the Model Context Protocol. [online] Available at: [https://www.anthropic.com/news/model-context-protocol](https://www.anthropic.com/news/model-context-protocol). (Accessd: April 2025) |
+| 10  | Amazon.com. (2025). Remove PII from conversations by using sensitive information filters - Amazon Bedrock. [online] Available at: [https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html) [Accessed 13 Apr. 2025]. |
+
+‌
 
  * Highlights the disparity in sentencing and overall outcomes for under-represented groups in the CJS - 2 Ethnicity and the Justice System paragraph
 
