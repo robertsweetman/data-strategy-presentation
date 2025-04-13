@@ -5,6 +5,7 @@
 - [Organisational Evaluation](./slide_2_0.md)
 - [Gap Analysis](./slide_2_5.md)
 - [UK Gov data maturity assessment](./slide_2_6.md)
+- [Impacts of the lack of access & transparency](./slide_2_7.md)
 - [Recommendation for Change](./slide_3.md)
 - [Ethics, DEI and Sustainability Analysis](./slide_4.md)
 - [Implementation](./slide_5_0.md)

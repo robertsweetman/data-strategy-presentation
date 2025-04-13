@@ -25,10 +25,10 @@
   * You _can_ fill in a 50 page form to apply for access with no guarantee of success
   * No outside scrutiny means that outcomes based on data become unchallenged/un-reliable potentially
 
-## Government's own State of Digital Government Review
+## Government's own State of Digital Government Review [(2)](./references_1.md#state-of-digital-government-review)
 
 ## Data is fragmented and underused.
-_This holds back AI, machine learning, and advanced analytics. Only 27% of survey respondents believe their current data infrastructure enables a comprehensive view of operations or transactions. 70% say their data landscape is not well co-ordinated, interoperable, and does not provide a unified source of truth._ [(2)]
+_This holds back AI, machine learning, and advanced analytics. Only 27% of survey respondents believe their current data infrastructure enables a comprehensive view of operations or transactions. 70% say their data landscape is not well co-ordinated, interoperable, and does not provide a unified source of truth._
 
 ## Critical services depend on decades-old legacy technology. 
-_The scale of legacy varies by organisation and is not consistently measured, but it is estimated to comprise 28% of systems in central government departments in 2024, an increase from 26% in 2023._ [(2)]
+_The scale of legacy varies by organisation and is not consistently measured, but it is estimated to comprise 28% of systems in central government departments in 2024, an increase from 26% in 2023._

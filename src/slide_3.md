@@ -1,12 +1,15 @@
-# Recommendation for Change
+# Recommendation
 
-From the maturity model the failure in transparency can clearly lead to ethical/discrimination issues going un-noticed.[()]
+## Increase Public Access
 
-The data is available for accedemic scrutiny and only under strict supervision. 
+* From the Governments own Data Maturity Model there is a lack of transparency. 
 
-This effectively limits it's value to the organisation and the public since true insights may only appear on an ad-hoc basis, if at all.
+* Ethical/discrimination/other issues going un-noticed.[(8)](./references_1.md#Data_First_Research_Bulletin_MoJ) 
 
-It's hard to claim that the MoJ is a data driven organisation when the data is not available to be scrutinised by the public.
+* The data is only available for accedemic scrutiny under strict supervision. 
+  * This effectively limits it's value to the organisation and the public since insights may only appear slowly and on an ad-hoc basis, if at all.
+
+_It's hard to claim that the MoJ is a Data Driven organisation when the data is not available to be scrutinised widely._
 
 ## The pre-AI solution
 
