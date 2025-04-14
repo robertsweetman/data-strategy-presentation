@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install latest mdbook
         run: |
@@ -26,7 +24,16 @@ jobs:
           echo ${GITHUB_WORKSPACE}/mdbook >> $GITHUB_PATH
           # Install mermaid support
           ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid install .
-        
+
+      - name: Set up image paths
+        run: |
+          # Create images directory at the root and copy images from src/images
+          mkdir -p images
+          cp -r src/images/* images/
+          
+          # Verify the images are in place
+          ls -la images/
+      
       - name: Build Book
         run: |
           # List available executables in the PATH
