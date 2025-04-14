@@ -49,12 +49,23 @@ jobs:
           node-version: '18'
 
       - name: Install Puppeteer
-        run: npm install puppeteer
+        run: npm install puppeteer@13.5.0
 
       - name: Generate PDF using Puppeteer
         run: |
           cat > pdf-generator.js << 'EOL'
           const puppeteer = require('puppeteer');
+          
+          // Helper function for waiting that works with older Puppeteer versions
+          async function wait(page, ms) {
+            if (page.waitForTimeout) {
+              await page.waitForTimeout(ms);
+            } else if (page.waitFor) {
+              await page.waitFor(ms);
+            } else {
+              await new Promise(resolve => setTimeout(resolve, ms));
+            }
+          }
           
           (async () => {
             // Launch browser with necessary flags for GitHub Actions environment
@@ -76,7 +87,7 @@ jobs:
             });
             
             // Wait extra time for mermaid diagrams to render
-            await page.waitForTimeout(3000);
+            await wait(page, 3000);
             
             // Force mermaid to re-render
             await page.evaluate(() => {
@@ -86,7 +97,7 @@ jobs:
             });
             
             // Wait again for rendering
-            await page.waitForTimeout(2000);
+            await wait(page, 2000);
             
             // Generate PDF with no margins for presentation style
             await page.pdf({
