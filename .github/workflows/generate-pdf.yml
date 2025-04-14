@@ -205,6 +205,13 @@ jobs:
               fill: #272935 !important;
               stroke: #3b3f51 !important;
             }
+            /* Image constraints for PDF */
+            img {
+              max-width: 100% !important;
+              height: auto !important;
+              display: block;
+              margin: 1em auto;
+            }
           </style>" >> combined.html
           
           # Loop through each page and append its content with wrapper for border
