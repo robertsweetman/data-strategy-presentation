@@ -17,7 +17,14 @@ jobs:
 
       - name: Install mdbook-mermaid preprocessor
         run: |
+          # Create the directory first
+          mkdir -p ${GITHUB_WORKSPACE}/mdbook
+          
+          # Download and extract mdbook-mermaid
           curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.12.6/mdbook-mermaid-v0.12.6-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
+          
+          # Add to PATH and install
+          export PATH="${GITHUB_WORKSPACE}/mdbook:$PATH"
           mdbook-mermaid install .
 
       - name: Build book
