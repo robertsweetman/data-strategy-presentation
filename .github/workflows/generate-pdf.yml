@@ -23,12 +23,23 @@ jobs:
           # Download and extract mdbook-mermaid
           curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.12.6/mdbook-mermaid-v0.12.6-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
           
-          # Add to PATH and install
-          export PATH="${GITHUB_WORKSPACE}/mdbook:$PATH"
-          mdbook-mermaid install .
-
+          # Add to PATH - using GITHUB_PATH for persistence across steps
+          echo "${GITHUB_WORKSPACE}/mdbook" >> $GITHUB_PATH
+          
+          # Verify that the executable is present
+          ls -la ${GITHUB_WORKSPACE}/mdbook
+          
+          # Install mermaid support
+          ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid install .
+          
       - name: Build book
-        run: mdbook build
+        run: |
+          # Print PATH to verify
+          echo "Current PATH: $PATH"
+          # Check if mdbook-mermaid is available
+          which mdbook-mermaid || echo "mdbook-mermaid not found in PATH"
+          # Build the book
+          mdbook build
 
       - name: Install patched wkhtmltopdf
         run: |
