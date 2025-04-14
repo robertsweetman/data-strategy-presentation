@@ -7,6 +7,9 @@
 * Increased scrutiny means a tendency towards justice outcomes that is more evenly applied
 * At this point we don't even know what other insights might arise 
 * Cost per prison place in the UK is £46K annually [(12)](./references_1.md#ReportCostofInequality)
+* Miscarriages of justice cost money. [(13)](./references_1.md#ccrc-annual-report)
+  * Claims rose by 20% in 2023
+  * Increase in claims by women and minorities
 
 ## Technical implementation leapfrogs legacy issues
 * Achieves an organisational and strategic goal WITHOUT a multi-year legacy overhall

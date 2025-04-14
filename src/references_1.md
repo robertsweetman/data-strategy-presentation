@@ -13,7 +13,10 @@
 |  9  | Anthropic.com. (2025). Introducing the Model Context Protocol. [online] Available at: [https://www.anthropic.com/news/model-context-protocol](https://www.anthropic.com/news/model-context-protocol). (Accessd: April 2025) |
 | 10  | Amazon.com. (2025). Remove PII from conversations by using sensitive information filters - Amazon Bedrock. [online] Available at: [https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html) (Accessed 13 Apr. 2025). |
 | 11 | GOV.UK. (2022) Conducting research in Prisons, Probation or HMPPS Headquarters [online] Available at: [https://apply-for-hmpps-research.service.justice.gov.uk/Introduction-and-Guidance/](https://apply-for-hmpps-research.service.justice.gov.uk/Introduction-and-Guidance/) (Accessed 11 Apr. 2025). |
-| 12 | The Equality Trust: Calculating the Cost of Inequality -2023. Available at: [https://media.equality-trust.out.re/uploads/2023/11/ReportCostofInequality-1.pdf](https://media.equality-trust.out.re/uploads/2023/11/ReportCostofInequality-1.pdf) (Accessed 11 Apr. 2025)
+| 12 | The Equality Trust: Calculating the Cost of Inequality -2023. Available at: [https://media.equality-trust.out.re/uploads/2023/11/ReportCostofInequality-1.pdf](https://media.equality-trust.out.re/uploads/2023/11/ReportCostofInequality-1.pdf) (Accessed 11 Apr. 2025) |
+| 13 | Criminal Cases Review Commission (2023). Almost 20% Rise in Miscarriage of Justice Claims in the Last Year. [online] Criminal Cases Review Commission. Available at:[https://ccrc.gov.uk/news/ccrc-annual-report-2023/](https://ccrc.gov.uk/news/ccrc-annual-report-2023/). |
+
+‌
 
 ‌
 
