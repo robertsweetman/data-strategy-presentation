@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install latest mdbook
         run: |
@@ -18,7 +20,17 @@ jobs:
           echo `pwd`/mdbook >> $GITHUB_PATH
       - name: Install mdbook-mermaid preprocessor
         run: |
-          curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.15.0/mdbook-mermaid-v0.15.0-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
+          # Install Rust and Cargo for building from source
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          source $HOME/.cargo/env
+          
+          # Build mdbook-mermaid from source to ensure compatibility
+          cargo install mdbook-mermaid
+          
+          # Verify installation
+          mdbook-mermaid --version
+          
+          # Install mermaid support
           mdbook-mermaid install .
       - name: Build Book
         run: |
