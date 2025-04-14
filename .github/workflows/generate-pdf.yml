@@ -83,6 +83,7 @@ jobs:
               '"$BOOK_CSS"'
             </style>
             <script src="mermaid.min.js"></script>
+            <script src="mermaid-init.js"></script>
             <script>
               document.addEventListener("DOMContentLoaded", function() {
                 if (typeof mermaid !== "undefined") {
@@ -244,6 +245,13 @@ jobs:
             background-color: #161923 !important;
           }
           EOL
+
+      - name: Copy mermaid JavaScript
+        run: |
+          # Find and copy mermaid.min.js from the book output
+          find book -name "mermaid*.js" -exec cp {} . \;
+          # Verify the file exists
+          ls -la mermaid*.js || echo "Mermaid JS file not found"
   
       - name: Generate PDF
         run: |
