@@ -1,10 +1,9 @@
 # Ethics, DEI and Sustainability Analysis
 
 ## Making Data Publically accessible
-* Increases scrutiny
+* Increased scrutiny means a tendency towards justice outcomes that is more evenly applied
 * Improve justice outcomes for ethnic minorities or under-represented groups
 * Wider (non-academic) access leads to pressure, both internally and externally, to accept feedback and changes
-* Increased scrutiny means a tendency towards justice outcomes that is more evenly applied
 * At this point we don't even know what other insights might arise 
 * Cost per prison place in the UK is £46K annually [(12)](./references_1.md#ReportCostofInequality)
 * Miscarriages of justice cost money. [(13)](./references_1.md#ccrc-annual-report)
