@@ -9,36 +9,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install mdBook
+      - name: Install latest mdbook
         run: |
-            mkdir bin
-            curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.48/mdbook-v0.4.48-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
-            echo "$(pwd)/bin" >> $GITHUB_PATH
-
+          tag=$(curl 'https://api.github.com/repos/rust-lang/mdbook/releases/latest' | jq -r '.tag_name')
+          url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
+          mkdir mdbook
+          curl -sSL $url | tar -xz --directory=./mdbook
+          echo `pwd`/mdbook >> $GITHUB_PATH
       - name: Install mdbook-mermaid preprocessor
         run: |
-          # Create the directory first
-          mkdir -p ${GITHUB_WORKSPACE}/mdbook
-          
-          # Download and extract mdbook-mermaid
           curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.12.6/mdbook-mermaid-v0.12.6-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
-          
-          # Add to PATH - using GITHUB_PATH for persistence across steps
-          echo "${GITHUB_WORKSPACE}/mdbook" >> $GITHUB_PATH
-          
-          # Verify that the executable is present
-          ls -la ${GITHUB_WORKSPACE}/mdbook
-          
-          # Install mermaid support
-          ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid install .
-          
-      - name: Build book
+          mdbook-mermaid install .
+      - name: Build Book
         run: |
-          # Print PATH to verify
-          echo "Current PATH: $PATH"
-          # Check if mdbook-mermaid is available
-          which mdbook-mermaid || echo "mdbook-mermaid not found in PATH"
-          # Build the book
+          # This assumes your book is in the root of your repository.
+          # Just add a `cd` here if you need to change to another directory.
           mdbook build
 
       - name: Install patched wkhtmltopdf
