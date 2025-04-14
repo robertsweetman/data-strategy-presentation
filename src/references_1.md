@@ -1,7 +1,7 @@
 # References
 
 
-1. GOV.UK (2014). About us. [online] GOV.UK. Available at: [https://www.gov.uk/government/organisations/ministry-of-justice/about](https://www.gov.uk/government/organisations/ministry-of-justice/about). (Accessed: Feb 2025)
+1. GOV.UK (2014). Ministry of Justice - About us. [online] GOV.UK. Available at: [https://www.gov.uk/government/organisations/ministry-of-justice/about](https://www.gov.uk/government/organisations/ministry-of-justice/about). (Accessed: Feb 2025)
 
 2. Dept for Science Innovation & Technology, Govt Digital Service. (2025). State of digital government review. [online] GOV.UK. Available at: [https://www.gov.uk/government/publications/state-of-digital-government-review](https://www.gov.uk/government/publications/state-of-digital-government-review). (Accessed: Apr 2025)
 
