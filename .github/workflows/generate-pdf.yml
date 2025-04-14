@@ -18,7 +18,7 @@ jobs:
           echo `pwd`/mdbook >> $GITHUB_PATH
       - name: Install mdbook-mermaid preprocessor
         run: |
-          curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.12.6/mdbook-mermaid-v0.12.6-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
+          curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.15.0/mdbook-mermaid-v0.15.0-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
           mdbook-mermaid install .
       - name: Build Book
         run: |
