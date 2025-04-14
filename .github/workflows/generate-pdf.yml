@@ -18,24 +18,21 @@ jobs:
           mkdir mdbook
           curl -sSL $url | tar -xz --directory=./mdbook
           echo `pwd`/mdbook >> $GITHUB_PATH
+        
       - name: Install mdbook-mermaid preprocessor
         run: |
-          # Install Rust and Cargo for building from source
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          source $HOME/.cargo/env
-          
-          # Build mdbook-mermaid from source to ensure compatibility
-          cargo install mdbook-mermaid
-          
-          # Verify installation
-          mdbook-mermaid --version
-          
+          curl -sSL https://github.com/badboy/mdbook-mermaid/releases/download/v0.12.6/mdbook-mermaid-v0.12.6-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=${GITHUB_WORKSPACE}/mdbook
+          # Ensure the mdbook-mermaid executable is in PATH
+          echo ${GITHUB_WORKSPACE}/mdbook >> $GITHUB_PATH
           # Install mermaid support
-          mdbook-mermaid install .
+          ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid install .
+        
       - name: Build Book
         run: |
-          # This assumes your book is in the root of your repository.
-          # Just add a `cd` here if you need to change to another directory.
+          # List available executables in the PATH
+          echo "Contents of mdbook directory:"
+          ls -la ${GITHUB_WORKSPACE}/mdbook
+          # Build the book
           mdbook build
 
       - name: Install patched wkhtmltopdf
