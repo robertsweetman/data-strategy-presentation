@@ -1,7 +1,7 @@
 # Risks and Mitigation
 
 ## Challenges
-Resistance to Cultural Change 
+### Resistance to Cultural Change 
   
   * Senior management MUST buy in and communicate a clear vision of the change
     * How improving data transparency and access will benefit all users
@@ -13,18 +13,19 @@ Resistance to Cultural Change
     * Appreciate a greater exposure to what users require from the data
     * Be comfortable with the idea that insights might come from outside the org    
   
-Significant push-back around security risks
+### Significant push-back around security risks
 
   * All levels of the organistion will be very concerned with the security implications
     * The technical implementation will be perceived as new and therefore untrusted
     * The idea of 'open data' is not accepted culturally, primarily due to security & GDPR
     * Possibility that the technology itself has been 'over-sold'
 
-Personnel and Skills
+### Personnel and Skills
 
   * The MoJ, like basically every other org, has a skills gap around AI
     * Consultants are expensive and the expertise should be retained in house
 
+## Risk Matrix
 
 |  %    | Low Impact| Medium Impact | High Impact |
 |----   |-----------|---------------|-------------|

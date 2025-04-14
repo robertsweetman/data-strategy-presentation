@@ -15,14 +15,3 @@
 | 11 | GOV.UK. (2022) Conducting research in Prisons, Probation or HMPPS Headquarters [online] Available at: [https://apply-for-hmpps-research.service.justice.gov.uk/Introduction-and-Guidance/](https://apply-for-hmpps-research.service.justice.gov.uk/Introduction-and-Guidance/) (Accessed 11 Apr. 2025). |
 | 12 | The Equality Trust: Calculating the Cost of Inequality -2023. Available at: [https://media.equality-trust.out.re/uploads/2023/11/ReportCostofInequality-1.pdf](https://media.equality-trust.out.re/uploads/2023/11/ReportCostofInequality-1.pdf) (Accessed 11 Apr. 2025) |
 | 13 | Criminal Cases Review Commission (2023). Almost 20% Rise in Miscarriage of Justice Claims in the Last Year. [online] Criminal Cases Review Commission. Available at:[https://ccrc.gov.uk/news/ccrc-annual-report-2023/](https://ccrc.gov.uk/news/ccrc-annual-report-2023/). |
-
-‌
-
-‌
-
- * Highlights the disparity in sentencing and overall outcomes for under-represented groups in the CJS - 2 Ethnicity and the Justice System paragraph
-
-> This found that compared to White defendants, Black defendants are significantly more likely (41% more likely) to elect to have their case heard in the Crown Court, when controlling for age, sex, and number of previous convictions.
-> Cases which elect to be heard in the Crown Court are more likely to result in immediate custody, and average sentence lengths are longer, also when controlling for these factors.
-
-

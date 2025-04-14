@@ -28,5 +28,5 @@ UK has its OWN Data Maturity Assessment framework for Government... [(7)](./refe
 | ⚠️ Managing and using data ethically | 2/3 | Low score primarily due to an overwhelming lack of transparency |
 
 ## Summary
-Legacy systems reduce data maturity, which has a knock-on effect on the ability to use data ethically and effectively since it's effectively in-accessible.
+Legacy systems reduce data maturity, which has a knock-on effect on the ability to use data ethically and effectively since it is effectively in-accessible.
 
