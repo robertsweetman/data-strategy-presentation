@@ -14,10 +14,10 @@
 * Achieves an organisational and strategic goal WITHOUT a multi-year legacy overhall
   * Doesn't require the overhall of legacy systems
     * Cheaper for the tax payer
-    * Renew/replace legacy apps without pressure
+    * Renew/replace legacy apps without time pressure
 
 ## Implementation on the EDGE of AI tech
 * Given the speed of AI innovation:
   * Costs will continue to fall as the approach is implemented
-* Use this project to attract AI talent into government
+* Leverage this project to attract AI talent into government
   * The 27% pension contribution for Civil Servants doesn't hurt either...
