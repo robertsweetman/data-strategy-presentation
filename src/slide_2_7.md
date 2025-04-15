@@ -6,12 +6,9 @@
 * Only open to academics - refer to 50 page application process
 * Only 40 projects completed in 5 years
 
-## Examples of findings:
-
 ### Ethnicity and the Justice System 
 
-_Compared to White defendants, Black defendants are significantly more
-likely (41% more likely) to elect to have their case heard in the Crown Court, when controlling for age, sex, and number of previous convictions. Cases which elect to be heard in the Crown Court are more likely to result in immediate custody, and average sentence lengths are longer, also when controlling for these factors._
+_Compared to White defendants, Black defendants are significantly morelikely (41% more likely) to elect to have their case heard in the Crown Court, when controlling for age, sex, and number of previous convictions. Cases which elect to be heard in the Crown Court are more likely to result in immediate custody, and average sentence lengths are longer, also when controlling for these factors._
 
 ### Ethnic Inequalities in the Criminal Justice System
 
