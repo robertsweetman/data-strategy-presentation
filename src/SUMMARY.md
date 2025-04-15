@@ -12,5 +12,4 @@
 - [Risks and Mitigation](./slide_5_4.md)
 - [Timescales for Change](./slide_5_5.md)
 - [Impact Analysis](./slide_6.md)
-- [Conclusion](./slide_7.md)
 - [References](./references_1.md)
