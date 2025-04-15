@@ -4,7 +4,7 @@
 
 * From the Government's own Data Maturity Model there is a lack of transparency. 
 
-* Ethical/discrimination issues go un-addressed .[(8)](./references_1.md#Data_First_Research_Bulletin_MoJ)
+* Ethical/discrimination issues go un-addressed.[(8)](./references_1.md#Data_First_Research_Bulletin_MoJ)
   * There's a difference between a suspicion of discrimination vs. data-backed evidence
 
 * The data is only available for accedemic scrutiny under strict supervision. 

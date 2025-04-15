@@ -40,6 +40,8 @@ Cultural
     - Show examples where open data would have led to better outcomes
     - Build a POC/demo to show staff ASAP
     - Encourage open debate as to risks/issues **once the internal pilot is live**
+  - Recognition this will improve outcomes for prisoners
+  - Convey how public perception of the MoJ will improve
 
 Security Risks
   - The primary goal of a POC will be to show the organisation that PII is not available

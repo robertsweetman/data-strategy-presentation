@@ -34,7 +34,7 @@ flowchart TD
 * Data and Reporting Team
   * Evangelise Internally
 
-## Koters 8 steps
+## Kotter's 8 steps
 * A problem-centered model for change
 * Existing state != ideal state
 
