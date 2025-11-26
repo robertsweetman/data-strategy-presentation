@@ -53,16 +53,29 @@ jobs:
           echo "Contents of mdbook directory:"
           ls -la ${GITHUB_WORKSPACE}/mdbook
           echo ""
-          echo "=== Starting mdbook build with verbose output ==="
-          mdbook build -v 2>&1 || {
+          echo "=== mdbook-mermaid version ==="
+          ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid --version
+          echo ""
+          echo "=== Starting mdbook build ==="
+          mdbook build 2>&1 | tee build.log || {
             echo ""
-            echo "=== Build failed! Checking mdbook-mermaid version and configuration ==="
-            ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid --version || echo "mdbook-mermaid version check failed"
+            echo "=== Build failed! ==="
+            echo "=== Full build log ==="
+            cat build.log
             echo ""
             echo "=== Checking book.toml configuration ==="
             cat book.toml
             echo ""
-            echo "=== Attempting to identify problematic mermaid syntax ==="
+            echo "=== Testing mermaid diagrams individually ==="
+            # Try to extract and show problematic mermaid blocks
+            for file in src/*.md; do
+              if grep -q '```mermaid' "$file"; then
+                echo "--- Checking $file ---"
+                # Show the mermaid blocks
+                awk '/```mermaid/,/```/' "$file"
+                echo ""
+              fi
+            done
             exit 1
           }
 
