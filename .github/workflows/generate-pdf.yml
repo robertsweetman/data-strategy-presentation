@@ -57,7 +57,7 @@ jobs:
           ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid --version
           echo ""
           echo "=== Starting mdbook build ==="
-          mdbook build 2>&1 | tee build.log || {
+          if ! mdbook build 2>&1 | tee build.log; then
             echo ""
             echo "=== Build failed! ==="
             echo "=== Full build log ==="
@@ -77,7 +77,8 @@ jobs:
               fi
             done
             exit 1
-          }
+          fi
+          echo "Build completed successfully"
 
       # Add Node.js setup for Puppeteer
       - name: Setup Node.js
