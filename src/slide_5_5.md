@@ -96,6 +96,7 @@ gantt
     title Data Strategy Implementation
     dateFormat YYYY-MM-DD
     axisFormat %b '%y
+    tickInterval 1month
     
     section Assess
     Current State   :a1, 2025-06-01, 3w
@@ -119,6 +120,7 @@ gantt
     title Data Strategy Implementation - Deployment
     dateFormat YYYY-MM-DD
     axisFormat %b '%y
+    tickInterval 1month
     
     section Pilot
     Staff Training   :a1, 2026-02-01, 6w
