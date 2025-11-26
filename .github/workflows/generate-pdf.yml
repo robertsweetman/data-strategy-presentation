@@ -57,23 +57,29 @@ jobs:
           ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid --version
           echo ""
           echo "=== Starting mdbook build ==="
-          if ! mdbook build 2>&1 | tee build.log; then
+          set +e
+          mdbook build 2>&1 | tee build.log
+          BUILD_EXIT_CODE=${PIPESTATUS[0]}
+          set -e
+          
+          if [ $BUILD_EXIT_CODE -ne 0 ]; then
             echo ""
-            echo "=== Build failed! ==="
+            echo "=== Build failed with exit code: $BUILD_EXIT_CODE ==="
             echo "=== Full build log ==="
             cat build.log
             echo ""
             echo "=== Checking book.toml configuration ==="
             cat book.toml
             echo ""
-            echo "=== Testing mermaid diagrams individually ==="
-            # Try to extract and show problematic mermaid blocks
+            echo "=== All mermaid diagrams in source files ==="
+            # Try to extract and show all mermaid blocks
             for file in src/*.md; do
               if grep -q '```mermaid' "$file"; then
-                echo "--- Checking $file ---"
-                # Show the mermaid blocks
-                awk '/```mermaid/,/```/' "$file"
                 echo ""
+                echo "======================================"
+                echo "File: $file"
+                echo "======================================"
+                awk '/```mermaid/,/```/' "$file"
               fi
             done
             exit 1
