@@ -34,13 +34,37 @@ jobs:
           # Verify the images are in place
           ls -la images/
       
+      - name: Debug - Check mermaid diagrams
+        run: |
+          echo "=== Checking for mermaid diagrams in source files ==="
+          grep -rn "^\`\`\`mermaid" src/ || echo "No mermaid blocks found"
+          echo ""
+          echo "=== Files containing mermaid diagrams ==="
+          for file in src/*.md; do
+            if grep -q "^\`\`\`mermaid" "$file"; then
+              echo "File: $file"
+              grep -A 2 "^\`\`\`mermaid" "$file"
+            fi
+          done
+      
       - name: Build Book
         run: |
           # List available executables in the PATH
           echo "Contents of mdbook directory:"
           ls -la ${GITHUB_WORKSPACE}/mdbook
-          # Build the book
-          mdbook build
+          echo ""
+          echo "=== Starting mdbook build with verbose output ==="
+          mdbook build -v 2>&1 || {
+            echo ""
+            echo "=== Build failed! Checking mdbook-mermaid version and configuration ==="
+            ${GITHUB_WORKSPACE}/mdbook/mdbook-mermaid --version || echo "mdbook-mermaid version check failed"
+            echo ""
+            echo "=== Checking book.toml configuration ==="
+            cat book.toml
+            echo ""
+            echo "=== Attempting to identify problematic mermaid syntax ==="
+            exit 1
+          }
 
       # Add Node.js setup for Puppeteer
       - name: Setup Node.js
