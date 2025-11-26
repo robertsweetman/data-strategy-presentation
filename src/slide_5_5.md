@@ -126,13 +126,13 @@ gantt
     Staff Training   :a1, 2026-02-01, 6w
     Internal Pilot   :a2, after a1, 12w
     Security Testing :crit, a3, after a1, 12w
-    Pilot Assesment Period: a4, after a3, 12w
+    Pilot Assesment Period :a4, after a3, 12w
     Pilot Review     :milestone, a5, after a4, 0d
     
     section Rollout
     Rollout Go/No-Go Decision :milestone, a6, after a4, 0d
     Rollout      :a7, after a6, 24w
-    Assessment   :milestone, after a7, 0d
+    Assessment   :milestone, a8, after a7, 0d
 ```
 
 Assessments will be ongoing to course correct to meet the goals over the long term.
